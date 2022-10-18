@@ -1,0 +1,64 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed #414141;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #414141;
+  border-radius: 30px;
+  padding: 2vh;
+  min-width: 200px;  
+  margin-bottom: 4vh;
+  margin-right:2vh;
+  height: 350px;
+  &-img{  
+   width: 60%;
+  }
+
+
+  &-title {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #414141;
+    text-decoration: none;
+    border: none;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+    -webkit-box-orient: vertical;
+    height: 60px;
+    -webkit-line-clamp: 2;
+    max-height: 60;
+  }
+  &-description {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  background-color: #ffcc26;
+  border: none;
+
+  &__no {
+    color: #fbfbfb;
+    :hover {
+      color: red;
+    }
+  }
+}
