@@ -19,7 +19,7 @@ const ProductCardPage: React.FC<Props> = ({ product }) => {
 
   return (
     <div className="productpage">
-      <div>
+      <div className="productpage-a">
         <ReactImageMagnify
           className="productpage-img"
           {...{
@@ -38,7 +38,7 @@ const ProductCardPage: React.FC<Props> = ({ product }) => {
         />
         <ZoomInIcon />
       </div>
-      <div className="productpage-a">
+      <div className="productpage-b">
         <div className="productpage-name"> {name}</div>
         <div className="productpage-description">
           <div className="productpage-description__price">$ {price}</div>
