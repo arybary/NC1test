@@ -14,13 +14,13 @@ const FavoritesProduct: React.FC<Props> = ({ product }) => {
 
   return (
     <div className="productpage">
-      <div className="productpage-a">
+     
       <img
         className="productpage-img"
         alt="propduct"
         src={`https://testbackend.nc-one.com${src}`}
       />
-      </div>
+   
       <div className="productpage-b">
         <div  className="name"> {name}</div>
         <div className="productpage-description">
