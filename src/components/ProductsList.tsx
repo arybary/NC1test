@@ -1,4 +1,4 @@
-import React, { CSSProperties} from "react";
+import React, { CSSProperties } from "react";
 import { FixedSizeGrid as Grid } from "react-window";
 import AutoSizer from "react-virtualized-auto-sizer";
 import "./ProductsList.scss";
@@ -17,9 +17,7 @@ interface CellType {
 const Cell = ({ columnIndex, rowIndex, style, data }: CellType) => {
   const product = data[columnIndex + rowIndex * 4];
   return (
-    <div style={style}>
-      {<ProductCardList product={product} />}     
-    </div>
+    <div style={style}>{product && <ProductCardList product={product} />}</div>
   );
 };
 
@@ -32,24 +30,24 @@ const ProductsList: React.FC = () => {
       <main className="maine">
         <Favorites />
         <AutoSizer>
-          {({ height, width }) => 
-            {const listWidth = 0.72*width;
-            const listWidthItem = listWidth/4 > 200 ? listWidth/4-5 : 200;
-           const countListItem =Math.floor(listWidth/listWidthItem);
-           console.log(countListItem)
+          {({ height, width }) => {
+            const listWidth = 0.72 * width;
+            const listWidthItem = listWidth / 4 > 200 ? listWidth / 4 - 5 : 200;
 
-              return <Grid              
-              columnCount={countListItem }
-              columnWidth={listWidthItem}
-              height={height}
-              rowCount={products.length / countListItem }
-              itemData={products}
-              rowHeight={420}
-              width={listWidth}
-            >
-              {Cell}
-            </Grid>}
-          }
+            return (
+              <Grid
+                columnCount={4}
+                columnWidth={listWidthItem}
+                height={height}
+                rowCount={products.length / 4 + 1}
+                itemData={products}
+                rowHeight={420}
+                width={listWidth}
+              >
+                {Cell}
+              </Grid>
+            );
+          }}
         </AutoSizer>
       </main>
     </>
