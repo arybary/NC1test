@@ -28,7 +28,7 @@ const Favorites: React.FC = () => {
             <List
               height={0.9 * height}
               itemCount={favoriteProducts.length}
-              itemSize={108}
+              itemSize={120}
               width={0.9 * width}
               itemData={favoriteProducts}
             >

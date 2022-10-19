@@ -40,13 +40,12 @@ const ProductCardPage: React.FC<Props> = ({ product }) => {
         <div> {name}</div>
         <div className="productpage-description">
           <div className="productpage-description__price">$ {price}</div>
-          <div
-            className="productpage-favorite"
+          <div          
             onClick={() => {
               setProductsLike(product);
             }}
           >
-            <FavoriteIcon
+            <FavoriteIcon className="productpage-favorite"
               sx={{ fontSize: 64, color: () => (like ? "#414141" : "#fbfbfb") }}
             />
           </div>

@@ -1,3 +1,5 @@
+/** @format */
+
 .productpage {
   display: flex;
   justify-content: center;
@@ -8,7 +10,6 @@
     align-items: center;
     width: 50%;
     max-width: 400px;
-    margin-right: 15vh;
   }
   &-details {
     width: 50%;
@@ -38,5 +39,20 @@
     border: none;
     font-size: 64px;
     border-radius: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .productpage {
+    flex-direction: column;
+    align-items: center;
+    &-details {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    &-favorite {
+      height: 32px;
+      width: 32px;
+    }
   }
 }
