@@ -33,13 +33,14 @@ const ProductsList: React.FC = () => {
           {({ height, width }) => {
             const listWidth = 0.72 * width;
             const listWidthItem = listWidth / 4 > 200 ? listWidth / 4 - 5 : 200;
+            const rowCountList=Math.ceil(products.length / 4 )
 
             return (
               <Grid
                 columnCount={4}
                 columnWidth={listWidthItem}
                 height={height}
-                rowCount={products.length / 4 + 1}
+                rowCount={rowCountList}
                 itemData={products}
                 rowHeight={420}
                 width={listWidth}
