@@ -42,7 +42,7 @@ const ProductsList: React.FC = () => {
               columnCount={countListItem }
               columnWidth={listWidthItem}
               height={height}
-              rowCount={products.length / 4}
+              rowCount={products.length / countListItem }
               itemData={products}
               rowHeight={420}
               width={listWidth}
