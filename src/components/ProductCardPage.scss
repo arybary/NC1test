@@ -1,14 +1,17 @@
 .productpage {
   display: flex;
   justify-content: center;
-  align-items: center;  
 
-  &-img {    
-    width:50%;
+  &-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 400px;
     margin-right: 15vh;
   }
-  &-name {
-    width:100%;
+  &-details {
+    width: 50%;
     font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
@@ -19,42 +22,21 @@
 
   &-description {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
 
-  &__price {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 64px;
-    line-height: 96px;
-    color: #414141;
-  }}
-}
-
-.productpage-favorite {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 82px;
-  width: 82px;
-  background-color: #ffcc26;
-  border: none;
-  font-size: 64px;
-
-  &__no {
-    color: #fbfbfb;
-    :hover {
-      color: red;
+    &__price {
+      font-weight: bold;
     }
   }
-}
-
-.productpage-a {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-}
-.productpage-b {
-  width: 50%;
+  &-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 82px;
+    width: 82px;
+    background-color: #ffcc26;
+    border: none;
+    font-size: 64px;
+    border-radius: 10px;
+  }
 }

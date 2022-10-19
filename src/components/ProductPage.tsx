@@ -13,14 +13,13 @@ const ProductPage: React.FC = () => {
   let [productPageData] = products.filter(
     (product: any) => product.id === Number(productId)
   );
-
-  
+ 
   return (
     <>
       <header className="header">Product Page</header>
       <main className="maine">
         <Favorites />
-       <Product product={productPageData} />
+      {productPageData && <Product product={productPageData}  />}
       
       </main>
       <Link className="link-productlist" to="/">PRODUCT LIST PAGE</Link>

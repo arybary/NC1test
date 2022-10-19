@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./ProductCardPage.scss";
@@ -13,18 +11,18 @@ interface Props {
 }
 
 const ProductCardPage: React.FC<Props> = ({ product }) => {
-  const { src, name, price, id, like } = product;
+  const { src, name, price, like } = product;
   const [favoriteProducts] = useGlobalState("favoriteProducts");
   const imageUrl = `https://testbackend.nc-one.com${src}`;
 
   return (
     <div className="productpage">
-      <div className="productpage-a">
+      <div className="productpage-img">
         <ReactImageMagnify
-          className="productpage-img"
+         
           {...{
             smallImage: {
-              isFluidWidth: false,
+              isFluidWidth: true,
               src: imageUrl,
               height: 400,
               width: 400,
@@ -36,10 +34,10 @@ const ProductCardPage: React.FC<Props> = ({ product }) => {
             },
           }}
         />
-        <ZoomInIcon />
+        <ZoomInIcon sx={{ fontSize: 48}}/>
       </div>
-      <div className="productpage-b">
-        <div className="productpage-name"> {name}</div>
+      <div className="productpage-details">
+        <div> {name}</div>
         <div className="productpage-description">
           <div className="productpage-description__price">$ {price}</div>
           <div

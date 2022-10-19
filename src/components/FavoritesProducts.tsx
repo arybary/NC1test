@@ -12,29 +12,24 @@ interface RowType {
   style: CSSProperties;
 }
 
-const Row = ({ index, style, data }: RowType) => {
-  console.log(data[index])
-  return (
-    <div style={style}>
-    {<FavoritesProduct product={data[index]} />}
-    </div>
-  );
-};
+const Row = ({ index, style, data }: RowType) => (
+  <div style={style}>{<FavoritesProduct product={data[index]} />}</div>
+);
 
 const Favorites: React.FC = () => {
   const [favoriteProducts] = useGlobalState("favoriteProducts");
-  console.log(favoriteProducts);
+
   return (
-    <div className="favorites">
-      <div className="favorites-title">favorites</div>
+    <div className="favorites-list">
+      <div className="favorites-list-title">favorites</div>
       {favoriteProducts.length !== 0 && (
         <AutoSizer>
           {({ height, width }) => (
             <List
-              height={0.9*height}
+              height={0.9 * height}
               itemCount={favoriteProducts.length}
               itemSize={108}
-              width={0.8*width}
+              width={0.9 * width}
               itemData={favoriteProducts}
             >
               {Row}

@@ -10,7 +10,6 @@ const App: React.FC = () => {
   const [products, setProducts] = useGlobalState("products");
 
   useEffect(() => {
-    console.log("1");
     axios
       .get("https://testbackend.nc-one.com/image")
       .then((res: any) =>
@@ -23,7 +22,7 @@ const App: React.FC = () => {
   return (
     <div className="page">
       <Routes>
-        <Route path="/"element={<ProductsList />} />
+        <Route path="/" element={<ProductsList />} />
         <Route path="/:productId" element={<ProductPage />} />
       </Routes>
     </div>

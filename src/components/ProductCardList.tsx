@@ -20,12 +20,13 @@ const ProductCardList: React.FC<Props> = ({ product }) => {
   const { src, name, price, id, like } = product;
 
   const favorite = like ? "favorite" : "favorite favorite__no";
+
   const onFavorite = () => {
     setProductsLike(product);
   };
 
   return (
-    <Card sx={{ minWidth: 200, height: 430 }} className="product">
+    <Card className="product">
       <Link to={`/${id}`} style={{ textDecoration: "none" }}>
         <CardActionArea>
           <CardMedia
@@ -34,8 +35,8 @@ const ProductCardList: React.FC<Props> = ({ product }) => {
             image={`https://testbackend.nc-one.com${src}`}
             alt="product"
           />
-          <CardContent>
-            <Typography className="product-title">{name}</Typography>
+          <CardContent className="product-title" >
+        {name}
           </CardContent>
         </CardActionArea>
       </Link>
@@ -43,9 +44,9 @@ const ProductCardList: React.FC<Props> = ({ product }) => {
         <Typography gutterBottom variant="h6" component="div">
           $ {price}
         </Typography>
-        <span className={favorite} onClick={onFavorite}>
+        <div className={favorite} onClick={onFavorite}>
           <FavoriteIcon />
-        </span>
+        </div>
       </CardActions>
     </Card>
   );

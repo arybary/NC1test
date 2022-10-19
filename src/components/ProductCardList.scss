@@ -1,6 +1,7 @@
 .product {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border: 1px dashed #414141;
   font-family: "Poppins";
   font-style: normal;
@@ -10,14 +11,15 @@
   color: #414141;
   border-radius: 30px;
   padding: 2vh;
-  min-width: 200px;  
+  max-width: 262px;
   margin-bottom: 4vh;
-  margin-right:2vh;
+  margin-right: 2vh;
   height: 350px;
-  &-img{  
-   width: 60%;
-  }
 
+  &-img {
+    align-items: center;
+    max-width: 200px;
+  }
 
   &-title {
     font-family: "Poppins";
@@ -25,24 +27,27 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
+    padding: 0;
     color: #414141;
     text-decoration: none;
     border: none;
     overflow: hidden;
-    text-overflow: ellipsis;    
+    text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     height: 60px;
     -webkit-line-clamp: 2;
     max-height: 60;
   }
+
   &-description {
     display: flex;
     justify-content: space-between;
     font-family: "Poppins";
     font-style: normal;
-    font-weight: 500;
+    font-weight: bolder;
     font-size: 24px;
     line-height: 36px;
+    color: #000;
   }
 }
 
@@ -52,8 +57,10 @@
   justify-content: center;
   height: 32px;
   width: 32px;
+  border-radius: 5px;
   background-color: #ffcc26;
   border: none;
+  cursor: pointer;
 
   &__no {
     color: #fbfbfb;

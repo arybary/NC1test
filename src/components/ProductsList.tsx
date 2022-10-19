@@ -25,9 +25,6 @@ const Cell = ({ columnIndex, rowIndex, style, data }: CellType) => {
 
 const ProductsList: React.FC = () => {
   const [products] = useGlobalState("products");
- 
-
-
 
   return (
     <>
@@ -35,19 +32,24 @@ const ProductsList: React.FC = () => {
       <main className="maine">
         <Favorites />
         <AutoSizer>
-          {({ height, width }) => (
-            <Grid              
-              columnCount={4}
-              columnWidth={0.7*width/4}
+          {({ height, width }) => 
+            {const listWidth = 0.72*width;
+            const listWidthItem = listWidth/4 > 200 ? listWidth/4-5 : 200;
+           const countListItem =Math.floor(listWidth/listWidthItem);
+           console.log(countListItem)
+
+              return <Grid              
+              columnCount={countListItem }
+              columnWidth={listWidthItem}
               height={height}
               rowCount={products.length / 4}
               itemData={products}
               rowHeight={420}
-              width={0.75*width}
+              width={listWidth}
             >
               {Cell}
-            </Grid>
-          )}
+            </Grid>}
+          }
         </AutoSizer>
       </main>
     </>

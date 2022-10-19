@@ -1,7 +1,7 @@
 import React from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./FavoritesProduct.scss";
-import { setProductsLike, useGlobalState } from "../state";
+import { setProductsLike } from "../state";
 import { ProductType } from "../interface";
 
 interface Props {
@@ -9,22 +9,20 @@ interface Props {
 }
 
 const FavoritesProduct: React.FC<Props> = ({ product }) => {
-  const { src, name, price, id, like } = product;
-  const [favoriteProducts] = useGlobalState("favoriteProducts");
+  const { src, name, price, like } = product;
 
   return (
-    <div className="productpage">     
+    <div className="favorite-prod">
       <img
-        className="image-a"
+        className="favorite-prod__img"
         alt="propduct"
         src={`https://testbackend.nc-one.com${src}`}
       />
-   
-      <div className="productpage-b">
-        <div  className="name"> {name}</div>
+
+      <div className="favorite-prod-details">
+        <div className="favorite-prod-details__name"> {name}</div>
         <div className="productpage-description">
-       
-          <span className="price">$ {price}</span>
+          <span className="favorite-prod-details__price">$ {price}</span>
           <span
             className="favorite"
             onClick={() => {
